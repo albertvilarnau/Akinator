@@ -63,27 +63,54 @@ public class JavaApplication11 {
         };
 
 
-        Scanner scanner = new Scanner(System.in);
-        boolean decision;
-        System.out.println("La pelicula salio en 2015 o mas adelante?");
-        decision = scanner.nextBoolean();
 
-        for(int i = 0; i <= 26; i++){
-            if(decision) {
-                if (movies[i].getYear() < 2015) {
-                    movies[i].setElegible(false);
-                }
-            } if(!decision){
-                if (movies[i].getYear() >= 2015) {
-                    movies[i].setElegible(false);
+//        Scanner scanner = new Scanner(System.in);
+//        boolean decision;
+//        System.out.println("La pelicula salio en 2015 o mas adelante?");
+//        decision = scanner.nextBoolean();
+//
+//        for(int i = 0; i <= totalMovies; i++){
+//            if(decision) {
+//                if (movies[i].getYear() < 2015) {
+//                    movies[i].setElegible(false);
+//                }
+//            } if(!decision){
+//                if (movies[i].getYear() >= 2015) {
+//                    movies[i].setElegible(false);
+//                }
+//            }
+//        }
+//
+//        for(int i = 0; i <= 26; i++){
+//            if (movies[i].getElegible()) {
+//                System.out.println(movies[i].getName() + " " + movies[i].getYear());
+//            }
+//        }
+
+
+
+        int totalMovies = movies.length;
+        int totalQuestions = questions.length;
+        boolean userInput;
+        double numQuestion;
+        int remainingMovies = totalMovies;
+
+        while (remainingMovies > 0){
+            remainingMovies = 0;
+            for(int i = 0; i < totalMovies; i++){
+                if(movies[i].getElegible()){
+                    remainingMovies++;
                 }
             }
+
+            numQuestion = Math.floor(Math.random() * 12);
+            System.out.println(questions[(int) numQuestion]);
         }
 
-        for(int i = 0; i <= 26; i++){
-            if (movies[i].getElegible()) {
-                System.out.println(movies[i].getName() + " " + movies[i].getYear());
-            }
-        }
+
+
+
     }
 }
+
+
