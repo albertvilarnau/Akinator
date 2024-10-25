@@ -46,6 +46,8 @@ public class JavaApplication11 {
         movies[25] = new Movie("Your Name", "Makoto Shinkai", "Japan", "Romance", 2016, true, false, false, 106);
         movies[26] = new Movie("La La Land", "Damien Chazelle", "USA", "Romance", 2016, false, true, false, 128);
 
+        Question[] questions = Question[];
+
         Scanner scanner = new Scanner(System.in);
         boolean decision;
         System.out.println("La pelicula salio en 2015 o mas adelante?");
