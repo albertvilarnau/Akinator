@@ -67,10 +67,13 @@ public class JavaApplication11 {
         do {
             nQuestion = (int) (Math.random() * 3);
             nOption = (int) (Math.random() * questions[nQuestion].getOptions().length);
-            System.out.println(questions[nQuestion].getBase_question() + questions[nQuestion].getOptions()[nOption].getText());
-            decision = scanner.nextBoolean();
+
+//            nQuestion = 1;
+//            nOption = 1;
 
             if (questions[nQuestion].getElegible()&&!questions[nQuestion].getOptions()[nOption].getHasComeOut()) {
+                System.out.println(questions[nQuestion].getBase_question() + questions[nQuestion].getOptions()[nOption].getText());
+                decision = scanner.nextBoolean();
                 questions[nQuestion].getOptions()[nOption].setHasComeOut(true);
                 switch (nQuestion) {
                     case 0:
@@ -83,7 +86,6 @@ public class JavaApplication11 {
                             if (!Objects.equals(movie.getCountry(), questions[nQuestion].getOptions()[nOption].getText())){
                                 if(decision){
                                     movie.setElegible(false);
-                                    questions[nQuestion].setElegible(false);
                                 }
                             }
                         }
@@ -99,7 +101,6 @@ public class JavaApplication11 {
                             if (!Objects.equals(movie.getGenre(), questions[nQuestion].getOptions()[nOption].getText())){
                                 if(decision){
                                     movie.setElegible(false);
-                                    questions[nQuestion].setElegible(false);
                                 }
                             }
                         }
@@ -121,44 +122,43 @@ public class JavaApplication11 {
                             y1 = 2020;
                             y2 = 2024;
                         }
-
                         for (Movie movie : movies) {
                             if (y1 <= movie.getYear() && movie.getYear() <= y2){
                                 if(!decision){
                                     movie.setElegible(false);
                                 }
                             }
-                            if (y1 > movie.getYear() && movie.getYear() > y2){
+                            if (y1 > movie.getYear() || movie.getYear() > y2){
                                 if(decision){
                                     movie.setElegible(false);
-                                    questions[nQuestion].setElegible(false);
                                 }
                             }
                         }
                         questions[nQuestion].getOptions()[nOption].setHasComeOut(true);
                         break;
                     case 3:
-
-
-                    }
-            }
-
-            int mCounter = 0;
-            for (Movie movie : movies) {
-                if (movie.getElegible()) {
-                    System.out.println(movie.getName());
-                    mCounter++;
                 }
-            }
-            if (mCounter == 1) {
-                finished = true;
-                for (Movie moviee : movies) {
-                    if (moviee.getElegible()) {
-                        System.out.printf("Your movie is " + moviee.getName());
+
+                if(decision){
+                    questions[nQuestion].setElegible(false);
+                }
+
+                int mCounter = 0;
+                for (Movie movie : movies) {
+                    if (movie.getElegible()) {
+                        System.out.println(movie.getName());
+                        mCounter++;
+                    }
+                }
+                if (mCounter == 1) {
+                    finished = true;
+                    for (Movie moviee : movies) {
+                        if (moviee.getElegible()) {
+                            System.out.printf("Your movie is " + moviee.getName());
+                        }
                     }
                 }
             }
         }while (!finished) ;
-
     }
 }
