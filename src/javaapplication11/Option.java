@@ -4,7 +4,7 @@ public class Option {
     private String text;
     private boolean hasComeOut;
 
-    public Option(String text){
+    public Option(String text) {
         this.text = text;
         this.hasComeOut = false;
     }

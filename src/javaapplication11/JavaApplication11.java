@@ -46,29 +46,39 @@ public class JavaApplication11 {
         movies[25] = new Movie("Your Name", "Makoto Shinkai", "Japan", "Romance", 2016, true, false, false, 106);
         movies[26] = new Movie("La La Land", "Damien Chazelle", "USA", "Romance", 2016, false, true, false, 128);
 
-        Question[] questions = Question[];
+        Question[] questions = new Question[7];
 
-        Scanner scanner = new Scanner(System.in);
-        boolean decision;
-        System.out.println("La pelicula salio en 2015 o mas adelante?");
-        decision = scanner.nextBoolean();
+        questions[0] = new Question("Your movie was made in ", new Option[]{ new Option("Japan"), new Option("USA"), new Option("Spain"), new Option("Canada")});
+        questions[1] = new Question("Your movie genre is ", new Option[]{new Option("Action"), new Option("Comedy"), new Option("Drama"), new Option("Horror"), new Option("Science Fiction"), new Option("Romance")});
+        questions[2] = new Question("Your movie was released between", new Option[]{new Option("1990 and 2000"), new Option("2001 and 2010"), new Option("2011 and 2019"), new Option("2020 and 2024")});
+        questions[3] = new Question("Your movie is animated", new Option[]{new Option("Base")});
+        questions[4] = new Question("Your movie has an Oscar", new Option[]{new Option("Base")});
+        questions[5] = new Question("Your movie is in a Saga", new Option[]{new Option("Base")});
+        questions[6] = new Question("Tu pelicula dura entre", new Option[]{new Option("50 and 100 minutes"), new Option("Mas de 100 minutes")});
 
-        for(int i = 0; i <= 26; i++){
-            if(decision) {
-                if (movies[i].getYear() < 2015) {
-                    movies[i].setElegible(false);
-                }
-            } if(!decision){
-                if (movies[i].getYear() >= 2015) {
-                    movies[i].setElegible(false);
+
+        boolean finished = false;
+
+        do{
+            int nQuestion = (int)(Math.random() * 7);
+            Scanner scanner = new Scanner(System.in);
+            boolean decision;
+
+            if(questions[nQuestion].getElegible()){
+                int option = (int)(Math.random() * questions[nQuestion].getOptions().length);
+                if(!questions[nQuestion].getOptions()[option].getHasComeOut()){
+
+
                 }
             }
-        }
 
-        for(int i = 0; i <= 26; i++){
-            if (movies[i].getElegible()) {
-                System.out.println(movies[i].getName() + " " + movies[i].getYear());
-            }
-        }
+
+
+        }while(!finished);
+
+
+
+
+
     }
 }
