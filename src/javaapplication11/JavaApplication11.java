@@ -119,6 +119,7 @@ public class JavaApplication11 {
                 }
             }
         } while (!finished);
+
     }
 
     public static void cargarPeliculasDesdeArchivo(String archivo, ArrayList<Movie> movies) {
