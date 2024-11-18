@@ -1,28 +1,28 @@
-The Matrix,Lana Wachowski; Lilly Wachowski,USA,Action,1999,false,false,false,136
-The Dark Knight,Christopher Nolan,USA,Action,2008,false,true,false,152
+The Matrix,Lana Wachowski; Lilly Wachowski,USA,Action,1999,false,true,true,136
+The Dark Knight,Christopher Nolan,USA,Action,2008,false,true,true,152
 Avengers: Infinity War,Anthony Russo; Joe Russo,USA,Action,2018,false,false,true,149
-Spider-Man: Across the Spider-Verse,Joaquim Dos Santos; Kemp Powers; Justin K. Thompson,USA,Action,2023,true,false,false,140
+Spider-Man: Across the Spider-Verse,Joaquim Dos Santos; Kemp Powers; Justin K. Thompson,USA,Action,2023,true,true,true,140
 Inception,Christopher Nolan,USA,Action,2010,false,true,false,148
-Toy Story,John Lasseter,USA,Comedy,1995,true,true,false,81
-Shrek,Andrew Adamson; Vicky Jenson,USA,Comedy,2001,true,true,false,90
+Toy Story,John Lasseter,USA,Comedy,1995,true,true,true,81
+Shrek,Andrew Adamson; Vicky Jenson,USA,Comedy,2001,true,true,true,90
 Campeones,Javier Fesser,Spain,Comedy,2018,false,false,false,124
-Torrente el brazo tonto de la ley,Santiago Segura,Spain,Comedy,1998,false,false,false,90
-The Wolf of Wall Street,Martin Scorsese,USA,Comedy,2013,false,true,false,180
+Torrente el brazo tonto de la ley,Santiago Segura,Spain,Comedy,1998,false,false,true,90
+The Wolf of Wall Street,Martin Scorsese,USA,Comedy,2013,false,false,false,180
 Goodfellas,Martin Scorsese,USA,Drama,1990,false,true,false,146
-Gladiator,Ridley Scott,USA,Drama,2000,false,true,false,155
+Gladiator,Ridley Scott,USA,Drama,2000,false,true,true,155
 Coco,Lee Unkrich; Adrian Molina,USA,Drama,2017,true,true,false,105
 La Sociedad de la Nieve,J.A. Bayona,Spain,Drama,2023,false,false,false,136
 The Truman Show,Peter Weir,USA,Drama,1998,false,false,false,103
-Cube,Vincenzo Natali,Canada,Horror,1997,false,false,false,90
-Saw,James Wan,USA,Horror,2004,false,false,false,103
+Cube,Vincenzo Natali,Canada,Horror,1997,false,false,true,90
+Saw,James Wan,USA,Horror,2004,false,false,true,103
 Coraline,Henry Selick,USA,Horror,2009,true,false,false,100
-[REC],Jaume Balagueró; Paco Plaza,Spain,Horror,2007,false,false,false,78
+[REC],Jaume Balagueró; Paco Plaza,Spain,Horror,2007,false,false,true,78
 Smile,Parker Finn,USA,Horror,2022,false,false,false,115
 Interstellar,Christopher Nolan,USA,Science Fiction,2014,false,true,false,169
 WALL•E,Andrew Stanton,USA,Science Fiction,2008,true,true,false,98
-The End of Evangelion,Hideaki Anno,Japan,Science Fiction,1997,false,false,false,87
-Avatar,James Cameron,USA,Science Fiction,2009,false,false,false,162
-Dune,Denis Villeneuve,USA,Science Fiction,2021,false,false,false,155
+The End of Evangelion,Hideaki Anno,Japan,Science Fiction,1997,true,false,true,87
+Avatar,James Cameron,USA,Science Fiction,2009,false,true,true,162
+Dune,Denis Villeneuve,USA,Science Fiction,2021,false,true,true,155
 Your Name,Makoto Shinkai,Japan,Romance,2016,true,false,false,106
 La La Land,Damien Chazelle,USA,Romance,2016,false,true,false,128
 Life of Pi,Ang Lee,USA,Drama,2012,false,true,false,127

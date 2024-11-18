@@ -12,25 +12,41 @@ public class JavaApplication11 {
         Question[] questions = new Question[7];
         questions[0] = new Question("Your movie was made in ", new Option[]{new Option("Japan"), new Option("USA"), new Option("Spain"), new Option("Canada")});
         questions[1] = new Question("Your movie genre is ", new Option[]{new Option("Action"), new Option("Comedy"), new Option("Drama"), new Option("Horror"), new Option("Science Fiction"), new Option("Romance")});
-        questions[2] = new Question("Your movie was released between", new Option[]{new Option("1990 and 2000"), new Option("2001 and 2010"), new Option("2011 and 2019"), new Option("2020 and 2024")});
-        questions[3] = new Question("Your movie is animated", new Option[]{new Option("Base")});
-        questions[4] = new Question("Your movie has an Oscar", new Option[]{new Option("Base")});
-        questions[5] = new Question("Your movie is in a Saga", new Option[]{new Option("Base")});
-        questions[6] = new Question("Your movie lasts between", new Option[]{new Option("50 and 100 minutes"), new Option("Mas de 100 minutes")});
+        questions[2] = new Question("Your movie was released between ", new Option[]{new Option("1990 and 2000"), new Option("2001 and 2010"), new Option("2011 and 2019"), new Option("2020 and 2024")});
+        questions[3] = new Question("Your movie is animated", new Option[]{new Option("")});
+        questions[4] = new Question("Your movie has an Oscar", new Option[]{new Option("")});
+        questions[5] = new Question("Your movie is in a Saga", new Option[]{new Option("")});
+        questions[6] = new Question("Your movie lasts between ", new Option[]{new Option("50 and 100 minutes"), new Option("more than 100 minutes")});
 
         boolean finished = false;
         Scanner scanner = new Scanner(System.in);
-        boolean decision;
         int nQuestion;
         int nOption;
+        boolean decision = false;
 
         do {
-            nQuestion = (int) (Math.random() * 3);
+            nQuestion = (int) (Math.random() * 7);
             nOption = (int) (Math.random() * questions[nQuestion].getOptions().length);
 
             if (questions[nQuestion].getElegible() && !questions[nQuestion].getOptions()[nOption].getHasComeOut()) {
                 System.out.println(questions[nQuestion].getBase_question() + questions[nQuestion].getOptions()[nOption].getText());
-                decision = scanner.nextBoolean();
+
+                String decision_auxiliar = "";
+                boolean n  = true;
+                while(n) {
+                    decision_auxiliar = scanner.nextLine();
+                    if (decision_auxiliar.equals("yes") || decision_auxiliar.equals("y") ||
+                            decision_auxiliar.equals("true") || decision_auxiliar.equals("si")) {
+                        decision = true;
+                        n = false;
+                    } else if (decision_auxiliar.equals("no") || decision_auxiliar.equals("n") ||
+                            decision_auxiliar.equals("false") || decision_auxiliar.equals("nope")) {
+                        decision = false;
+                        n = false;
+                    } else {
+                        System.out.println("unrecognized entry");
+                    }
+                }
                 questions[nQuestion].getOptions()[nOption].setHasComeOut(true);
 
                 switch (nQuestion) {
@@ -95,7 +111,75 @@ public class JavaApplication11 {
                         questions[nQuestion].getOptions()[nOption].setHasComeOut(true);
                         break;
                     case 3:
+                        for (Movie movie : movies) {
+                            if(decision){
+                                if(!movie.isAnimated()){
+                                    movie.setElegible(false);
+                                }
+                            }
+                            if(!decision){
+                                if(movie.isAnimated()){
+                                    movie.setElegible(false);
+                                }
+                            }
+                        }
+                        questions[nQuestion].getOptions()[nOption].setHasComeOut(true);
                         break;
+                    case 4:
+                        for (Movie movie : movies) {
+                            if(decision){
+                                if(!movie.isHaveOscar()){
+                                    movie.setElegible(false);
+                                }
+                            }
+                            if(!decision){
+                                if(movie.isHaveOscar()){
+                                    movie.setElegible(false);
+                                }
+                            }
+                        }
+                        questions[nQuestion].getOptions()[nOption].setHasComeOut(true);
+                        break;
+                    case 5:
+                        for (Movie movie : movies) {
+                            if(decision){
+                                if(!movie.isInSaga()){
+                                    movie.setElegible(false);
+                                }
+                            }
+                            if(!decision){
+                                if(movie.isInSaga()){
+                                    movie.setElegible(false);
+                                }
+                            }
+                        }
+                        questions[nQuestion].getOptions()[nOption].setHasComeOut(true);
+                        break;
+                    case 6:
+                        int num1 = 0;
+                        int num2 = 0;
+                        if (nOption == 0){
+                            num1 = 50;
+                            num2 = 100;
+                        } else if(nOption == 1){
+                            num1 = 101;
+                            num2 = 1000;
+                        }
+                        for (Movie movie : movies) {
+                            if (num1 <= movie.getDurationMins() && movie.getDurationMins() <= num2) {
+                                if (!decision) {
+                                    movie.setElegible(false);
+                                }
+                            }
+                            if (num1 > movie.getDurationMins() || movie.getDurationMins() > num2) {
+                                if (decision) {
+                                    movie.setElegible(false);
+                                }
+                            }
+                        }
+                        questions[nQuestion].getOptions()[nOption].setHasComeOut(true);
+                        break;
+
                 }
 
                 if (decision) {
