@@ -189,7 +189,6 @@ public class JavaApplication11 {
                 int mCounter = 0;
                 for (Movie movie : movies) {
                     if (movie.getElegible()) {
-                        System.out.println(movie.getName());
                         mCounter++;
                     }
                 }
@@ -200,6 +199,9 @@ public class JavaApplication11 {
                             System.out.printf("Your movie is " + moviee.getName());
                         }
                     }
+                } else if(mCounter == 0){
+                    finished = true;
+                    System.out.println("La pelicula no existe en nuestra base de datos");
                 }
             }
         } while (!finished);
